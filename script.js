@@ -14,9 +14,7 @@ function secondsToMinutesSeconds(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 async function getSongs(){
-    // let a=await fetch("http://127.0.0.1:5500/songs/")
-     let a=await fetch(" https://musicapi.x007.workers.dev/fetch?id=e9b525b48070ce18657a03a7be249d0c96b18bf012ba2ce87f33097dd45b8a4047f5b7c16dd94923040fbb5b4d83ee46
-")
+     let a=await fetch("http://127.0.0.1:5500/songs/")
     let response = await a.text()
     let div = document.createElement("div")
     div.innerHTML = response
