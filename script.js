@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("hii");
+$(document).ready(function () {
   let currentSong = new Audio();
   function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -97,12 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".circle").style.left = percent + "%";
       currentSong.currentTime = (currentSong.duration * percent) / 100;
     });
-    const hamburger = document.querySelector(".hamburger");
-    hamburger.addEventListener("touchstart", () => {
-      document.querySelector(".left").style.left = "0";
-    });
-    hamburger.addEventListener("click", () => {
-      document.querySelector(".left").style.left = "0";
+    $(".hamburger").on("click", function () {
+      $(".left").css("left", "0");
     });
     document.querySelector(".close").addEventListener("click", () => {
       document.querySelector(".left").style.left = "-120%";
